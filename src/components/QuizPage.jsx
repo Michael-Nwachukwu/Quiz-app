@@ -77,15 +77,10 @@ const QuizPage = () => {
                                 {currentQuestion?.options.map((option, index) => {
                                     const choice = String.fromCharCode(65 + index); // 65 is the ASCII value for 'A'
                                     const isSelected = selectedAnswer === option;
-                                    const isCorrect = currentQuestion?.answer === option;
-                                    const bgColor = isSelected
-                                    ? isCorrect
-                                        ? "text-white bg-green"
-                                        : "bg-red text-white"
-                                    : "bg-lightGrey text-darkNavy";
+                                    
                                     return (
                                         <li key={index} onClick={() => handleSelectedAnswer(option)}>
-                                            <Option option={choice} answers={option} isSubmitted={isSubmitted} isSelected={isSelected} bgColor={bgColor} />
+                                            <Option option={choice} answers={option} isSubmitted={isSubmitted} isSelected={isSelected} />
                                         </li>
                                     )
                                 })}
